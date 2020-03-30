@@ -12,8 +12,6 @@ services:
     volumes:
       - mysqldb:/var/lib/mysql
       - ./mysql/:/docker-entrypoint-initdb.d/
-    networks:
-      - parking_network
   parking:
     build:
       context: .
@@ -23,13 +21,9 @@ services:
     depends_on:
       - mysql
     stdin_open: true
-    networks:
-      - parking_network
     restart: always
     tty: true
     ports:
       - 8080:8080
 volumes:
   mysqldb:
-networks:
-  parking_network:
