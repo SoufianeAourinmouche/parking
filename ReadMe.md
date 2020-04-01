@@ -41,7 +41,7 @@ You need to install Maven.
 Then, inside your terminal, type the following command. 
 
 ```$xslt
-maven clean build install
+mvn clean install
 ```
 
 ## Docker
